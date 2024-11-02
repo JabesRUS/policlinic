@@ -15,7 +15,7 @@ public class Doctor {
     Specialization doctorSpecialization;
 
     public BigDecimal treatPerson() {
-        log.info(DOCTOR_INFO_MESSAGE);
+        log.info(DOCTOR_INFO_MESSAGE.formatted(doctorSpecialization.toString()));
         return costOfAdmission;
     }
 }
