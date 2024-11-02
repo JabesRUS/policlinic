@@ -10,15 +10,15 @@ import java.math.BigDecimal;
 @Component
 public class CashRegister {
 
-    private final static String INFO_MESSAGE = "Доход кассы: %s";
+    private final static String INFO_MESSAGE = "Доход кассы: {}";
 
-    BigDecimal incomeCash = BigDecimal.ZERO;
+    private BigDecimal incomeCash = BigDecimal.ZERO;
 
     public void incomingPayment(BigDecimal payment) {
         incomeCash = incomeCash.add(payment);
     }
 
-    public void infoCash() {
-        log.info(String.format(INFO_MESSAGE, incomeCash.toString()));
+    public  void infoCash() {
+        log.info(INFO_MESSAGE, incomeCash);
     }
 }

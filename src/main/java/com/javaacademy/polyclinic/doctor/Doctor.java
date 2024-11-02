@@ -9,13 +9,13 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 public class Doctor {
 
-    private final static String DOCTOR_INFO_MESSAGE = "%s вылечил человека.";
+    private final static String DOCTOR_INFO_MESSAGE = "{} вылечил человека.";
 
     private BigDecimal costOfAdmission;
-    Specialization doctorSpecialization;
+    private Specialization doctorSpecialization;
 
     public BigDecimal treatPerson() {
-        log.info(DOCTOR_INFO_MESSAGE.formatted(doctorSpecialization.toString()));
+        log.info(DOCTOR_INFO_MESSAGE, doctorSpecialization.getSpecializationRus());
         return costOfAdmission;
     }
 }
