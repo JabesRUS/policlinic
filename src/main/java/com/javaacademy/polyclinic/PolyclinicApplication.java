@@ -1,6 +1,6 @@
 package com.javaacademy.polyclinic;
 
-import com.javaacademy.polyclinic.doctor.Doctor;
+import com.javaacademy.polyclinic.policlinic.Policlinic;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
