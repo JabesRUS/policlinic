@@ -1,12 +1,12 @@
 package com.javaacademy.polyclinic;
 
 import com.javaacademy.polyclinic.doctor.Doctor;
-import com.javaacademy.polyclinic.doctor.Specialization;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
-@AllArgsConstructor
+@Component
 public class Policlinic {
 
     private CashRegister cashRegister;
@@ -14,6 +14,16 @@ public class Policlinic {
     Doctor therapist;
     Doctor juniorSurgeon;
     Doctor seniorSurgeon;
+
+    public Policlinic(@Qualifier("cashRegister") CashRegister cashRegister, @Qualifier("dentist") Doctor dentist,
+                      @Qualifier("therapist") Doctor therapist, @Qualifier("juniorSurgeon") Doctor juniorSurgeon,
+                      @Qualifier("seniorSurgeon") Doctor seniorSurgeon) {
+        this.cashRegister = cashRegister;
+        this.dentist = dentist;
+        this.therapist = therapist;
+        this.juniorSurgeon = juniorSurgeon;
+        this.seniorSurgeon = seniorSurgeon;
+    }
 
     public void seeDentist() {
         cashRegister.incomingPayment(dentist.treatPerson());
@@ -29,5 +39,9 @@ public class Policlinic {
 
     public void seeSeniorSurgeon() {
         cashRegister.incomingPayment(seniorSurgeon.treatPerson());
+    }
+
+    public void infoCashRegister() {
+        cashRegister.infoCash();
     }
 }

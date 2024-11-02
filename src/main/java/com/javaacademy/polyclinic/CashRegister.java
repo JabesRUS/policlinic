@@ -2,10 +2,12 @@ package com.javaacademy.polyclinic;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
 @Slf4j
+@Component
 public class CashRegister {
 
     private final static String INFO_MESSAGE = "Доход кассы: %s";
