@@ -3,37 +3,34 @@ package com.javaacademy.polyclinic.policlinic;
 import com.javaacademy.polyclinic.cash_register.CashRegister;
 import com.javaacademy.polyclinic.doctor.Doctor;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-
 @Component
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class Policlinic {
-
     CashRegister cashRegister;
-    final List<Doctor> doctorList;
-
-    public Policlinic(CashRegister cashRegister, List<Doctor> doctorList) {
-        this.cashRegister = cashRegister;
-        this.doctorList = doctorList;
-    }
+    Doctor dentist;
+    Doctor therapist;
+    Doctor juniorSurgeon;
+    Doctor seniorSurgeon;
 
     public void seeDentist() {
-        cashRegister.incomingPayment(doctorList.get(0).treatPerson());
+        cashRegister.incomingPayment(dentist.treatPerson());
     }
 
     public void seeTherapist() {
-        cashRegister.incomingPayment(doctorList.get(1).treatPerson());
+        cashRegister.incomingPayment(therapist.treatPerson());
     }
 
     public void seeJuniorSurgeon() {
-        cashRegister.incomingPayment(doctorList.get(2).treatPerson());
+        cashRegister.incomingPayment(juniorSurgeon.treatPerson());
     }
 
     public void seeSeniorSurgeon() {
-        cashRegister.incomingPayment(doctorList.get(3).treatPerson());
+        cashRegister.incomingPayment(seniorSurgeon.treatPerson());
     }
 
         public void infoCashRegister() {

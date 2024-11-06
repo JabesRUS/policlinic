@@ -15,13 +15,13 @@ import java.math.BigDecimal;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class PoliclinicConfig {
 
-    @Value("${doctor.rate.dentist}")
+    @Value("${rate.doctor.dentist}")
     String dentistRate;
-    @Value("${doctor.rate.therapist}")
+    @Value("${rate.doctor.therapist}")
     String therapistRate;
-    @Value("${doctor.rate.junior-surgeon}")
+    @Value("${rate.doctor.junior-surgeon}")
     String juniorSurgeonRate;
-    @Value("${doctor.rate.senior-surgeon}")
+    @Value("${rate.doctor.senior-surgeon}")
     String seniorSurgeonRate;
 
     @Bean

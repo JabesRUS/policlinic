@@ -10,7 +10,6 @@ import java.math.BigDecimal;
 @Slf4j
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Component
-
 public class CashRegister {
 
     static final String INFO_MESSAGE = "Доход кассы: {}";
