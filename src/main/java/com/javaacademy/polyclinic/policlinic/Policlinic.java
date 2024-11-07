@@ -18,19 +18,23 @@ public class Policlinic {
     Doctor seniorSurgeon;
 
     public void seeDentist() {
-        cashRegister.incomingPayment(dentist.treatPerson());
+        treatment(dentist);
     }
 
     public void seeTherapist() {
-        cashRegister.incomingPayment(therapist.treatPerson());
+        treatment(therapist);
     }
 
     public void seeJuniorSurgeon() {
-        cashRegister.incomingPayment(juniorSurgeon.treatPerson());
+        treatment(juniorSurgeon);
     }
 
     public void seeSeniorSurgeon() {
-        cashRegister.incomingPayment(seniorSurgeon.treatPerson());
+        treatment(seniorSurgeon);
+    }
+
+    private void treatment(Doctor doctor) {
+        cashRegister.incomingPayment(doctor.treatPerson());
     }
 
         public void infoCashRegister() {
